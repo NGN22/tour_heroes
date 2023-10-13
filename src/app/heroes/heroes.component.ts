@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from '../service/hero.service';
+import { MessageService } from '../service/message.service';
 import { Observable ,of } from 'rxjs';
 
 @Component({
@@ -12,7 +13,7 @@ export class HeroesComponent {
   heroes: Hero[] = [];
   selectedHero?: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private messegeService: MessageService) { }
 
   ngOnInit() {
     this.getHeroes();
@@ -20,7 +21,7 @@ export class HeroesComponent {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(x => {console.log(x); this.heroes = x})
+      .subscribe(x => { this.heroes = x})
   }
 
   onSelect(hero: Hero): void {
