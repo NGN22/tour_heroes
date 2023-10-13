@@ -1,0 +1,5 @@
+// async getItems(id: string): Promise<Item[]> {
+//   const items = await this.http.get<Item[]>(REST_SERVER_URL + '/items/' + id).toPromise();
+//   return items.map((item) => Item.fromJson(item))
+// }
+
